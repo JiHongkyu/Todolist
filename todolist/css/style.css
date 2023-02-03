@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+.todo {
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    margin: 100px auto;
+}
+
+.todo .day {
+    display: flex;
+    align-items: center;
+}
+
+.todo .day h2 {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.todo .todo_form {
+    border-top: 5px solid black;
+}
