@@ -1,6 +1,14 @@
+@font-face {
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #d5ccde;
     margin: 0;
+    font-family: 'KyoboHandwriting2020A';
 }
 li {
     list-style: none;
@@ -8,6 +16,7 @@ li {
 }
 .todo {
     border: 1px solid #7c7a7a;
+    border-radius: 20px;
     background-color: #FFEECB;
     display: flex;
     flex-direction: column;
@@ -15,6 +24,7 @@ li {
     height: 100%;
     margin: 100px auto;
     box-shadow: 5px 5px 5px 5px gray;
+    
 }
 
 .todo .day {
@@ -28,6 +38,11 @@ li {
     margin-left: 20px;
 }
 
+.todo .day span {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .todo .todo_form input {
     border: none;
     outline: none;
@@ -36,6 +51,8 @@ li {
     display: block;
     margin: 0 auto;
     width: 90%;
+    font-family: 'KyoboHandwriting2020A';
+    
 }
 .todo .todo_list {
     padding-left: 0px;
