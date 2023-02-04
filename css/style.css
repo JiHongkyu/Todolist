@@ -1,5 +1,5 @@
 body {
-    background-color: #FFEECB;
+    background-color: #d5ccde;
     margin: 0;
 }
 li {
@@ -8,11 +8,13 @@ li {
 }
 .todo {
     border: 1px solid #7c7a7a;
+    background-color: #FFEECB;
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 500px;
+    height: 100%;
     margin: 100px auto;
+    box-shadow: 5px 5px 5px 5px gray;
 }
 
 .todo .day {
