@@ -1,11 +1,13 @@
 body {
+    background-color: #FFEECB;
     margin: 0;
 }
 li {
     list-style: none;
+
 }
 .todo {
-    border: 5px solid blue;
+    border: 1px solid #7c7a7a;
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -24,13 +26,10 @@ li {
     margin-left: 20px;
 }
 
-.todo .todo_form {
-    
-}
-
 .todo .todo_form input {
     border: none;
     outline: none;
+    background-color: #FFEECB;
     border-bottom: 1px solid black;
     display: block;
     margin: 0 auto;
