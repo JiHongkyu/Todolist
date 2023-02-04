@@ -1,7 +1,9 @@
 body {
     margin: 0;
 }
-
+li {
+    list-style: none;
+}
 .todo {
     border: 5px solid blue;
     display: flex;
@@ -14,6 +16,7 @@ body {
 .todo .day {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .todo .day h2 {
@@ -22,5 +25,24 @@ body {
 }
 
 .todo .todo_form {
-    border-top: 5px solid black;
+    
+}
+
+.todo .todo_form input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+.todo .todo_list {
+    padding-left: 0px;
+    margin: 10px 15px;
+}
+
+.todo .todo_list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
 }
