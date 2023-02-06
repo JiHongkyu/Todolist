@@ -14,6 +14,15 @@ li {
     list-style: none;
 }
 
+button {
+    border: none;
+    background-color: #FFEECB;
+    cursor: pointer;
+    background-image: url('../img/trashcan.png');
+    width: 16px;
+    height: 16px;
+}
+
 .todo {
     border: 1px solid #7c7a7a;
     border-radius: 20px;
