@@ -56,7 +56,6 @@ function insertTodo(newTodo) {
     }
 
     span.innerText = newTodo.text;
-    button.innerText = "X";
     todo_ul.appendChild(li);
 
     button.addEventListener('click', deleteTodo);
