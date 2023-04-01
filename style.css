@@ -6,30 +6,32 @@
 }
 
 * {
-  margin: 0;
-  text-decoration: none;
-  list-style-type: none;
   font-family: 'KCC-Ganpan';
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
   outline: none;
 }
 
 html {
-  height: 100%;
   background: linear-gradient(180deg, #fbc2ebcc 0%, #a6c1ee99 100%);
   background-repeat: no-repeat;
+  height: 100%;
 }
 
+
 body {
-  width: 600px;
+  width: 800px;
   height: 70%;
-  margin: 100px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 100px auto;
   background: #fff;
   border-radius: 25px;
 }
 
+/********** HEADER **********/
 .header {
   border-bottom: 3px solid #AD9FF5;
   width: 100%;
@@ -41,31 +43,32 @@ body {
 }
 
 .header h1 {
-  font-size: 45px;
+  font-size: 50px;
 }
 
-.header .date-time {
+.date-time {
   width: 90%;
-  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 22px;
+  font-size: 24px;
+  margin: 15px 0 5px 0;
 }
 
-.date {
+.date-time .date {
   display: flex;
+  align-items: center;
 }
 
-.date .day {
+.date-time .date .day {
+  margin-left: 5px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
-  font-size: 10px;
-  margin-left: 5px;
+  align-items: center;
 }
 
 .todo-form {
-  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -77,21 +80,15 @@ body {
   border: none;
   border-bottom: 1px solid black;
   font-size: 16px;
-  padding: 10px;
+  padding: 5px;
+  color: #AD9FF5;
 }
 
 .todo-form .todo-button {
   border: none;
-  background: #fff;
+  background: none;
   color: #AD9FF5;
-}
-
-.todo-form .todo-button i {
   font-size: 40px;
 }
 
-
-.todo-form .todo-button:hover {
-  cursor: pointer;
-  color: #6D7CB2;
-}
+/********** SECTION **********/
