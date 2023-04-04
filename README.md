@@ -14,8 +14,10 @@
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
 
 ## 목표
-날짜, 시간기능 구현
+✅날짜, 시간기능 구현
 
-일정 추가, 삭제, 수정기능 구현
+✅일정 추가, 삭제, 수정기능 구현
   
-일정 토글기능 구현
+  일정 토글기능 구현
+
+  리스트 스크롤 구현

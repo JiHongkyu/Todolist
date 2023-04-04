@@ -21,7 +21,7 @@ html {
 
 
 body {
-  width: 800px;
+  width: 600px;
   height: 70%;
   display: flex;
   flex-direction: column;
@@ -76,12 +76,19 @@ body {
 }
 
 .todo-form .todo-input {
-  width: 300px;
+  visibility: hidden;
+  width: 0px;
   border: none;
   border-bottom: 1px solid black;
   font-size: 16px;
   padding: 5px;
   color: #AD9FF5;
+  transition: all ease 1s 0s;
+}
+
+.todo-input.active {
+  visibility: visible;
+  width: 200px;
 }
 
 .todo-form .todo-button {
@@ -89,6 +96,64 @@ body {
   background: none;
   color: #AD9FF5;
   font-size: 40px;
+  cursor: pointer;
 }
 
 /********** SECTION **********/
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 65%;
+}
+.todo-list {
+  width: 80%;
+  padding: 0;
+}
+
+.todo-list .todo-item {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #E6EDF8;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid #6D7CB2;
+  color: #6D7CB2;
+  border-radius: 15px;
+}
+
+.todo-list .todo-item input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  color:#6D7CB2;
+}
+
+.todo-list .todo-item div button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 3px;
+  padding: 1px 3px;
+  color: #6D7CB2;
+}
+
+.todo-list .todo-item:hover {
+  cursor: pointer;
+  width: 75%;
+}
+
+.todo-list .todo-item.checked {
+  display: flex;
+  justify-content: space-between;
+  background-color: #dee2e7;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid #6D7CB2;
+  color: #838db2;
+  border-radius: 15px;
+  width: 60%;
+  text-decoration: line-through;
+}
+
