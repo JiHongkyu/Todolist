@@ -185,9 +185,10 @@ body {
 /********** HEADER **********/
   .header {
     color: #FFFFFF;
-    border-bottom: 10px solid #c0b5fa47;
+    border: none;
     margin-bottom: 30px;
-    height: 240px;
+    height: 250px;
+
   }
   .header h1 { font-size: 40px; }
   .date-time {

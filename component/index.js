@@ -4,11 +4,9 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 let todos = [];
 
-todoInput.addEventListener("input", charLimit);
 todoButton.addEventListener("click", function() {
   todoInput.classList.toggle("active");
 })
-
 todoForm.addEventListener("submit", submitTodo);
 
 //화면이 로드 됐을 때 localstorage에 데이터가 있으면 출력
@@ -28,15 +26,23 @@ function save() {
 function submitTodo(e) {
   e.preventDefault();
 
-  const newTodo = {
-    id: Date.now(),
-    text: todoInput.value,
-    check: "false"
-  };
+  //글자수제한
+  if(todoInput.value.length > 14) {
+    alert("14자 이하로 작성해주세요.");
+    todoInput.value = "";
+    return null;
 
-  todos.push(newTodo);
-  insertTodo(newTodo);
-  save();
+  } else {
+    const newTodo = {
+      id: Date.now(),
+      text: todoInput.value,
+      check: "false"
+    };
+
+    todos.push(newTodo);
+    insertTodo(newTodo);
+    save();
+  }
 }
 
 //추가기능
@@ -140,13 +146,5 @@ function checkTodo(e) {
       todos[find].check = "false";
     }
     save();
-  }
-}
-
-//글자수제한 (14자를 넘어가면 경고창 발생)
-function charLimit() {
-  if(todoInput.value.length > 14) {
-    alert("14자 이하로 입력해주세요.");
-    todoInput.value = "";
   }
 }
