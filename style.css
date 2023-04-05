@@ -109,6 +109,18 @@ body {
 .todo-list {
   width: 80%;
   padding: 0;
+  overflow-y: scroll;
+}
+
+.todo-list::-webkit-scrollbar { 
+  width: 20px;
+}
+.todo-list::-webkit-scrollbar-thumb {
+  background: #b4abe3c4;
+  border-radius: 25px;
+}
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background: #b4abe3;
 }
 
 .todo-list .todo-item {
@@ -157,3 +169,42 @@ body {
   text-decoration: line-through;
 }
 
+/********** Mobile **********/
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    height: 85%;
+    margin-top: 30px;
+    background: none;
+  }
+  
+/********** HEADER **********/
+  .header {
+    color: #FFFFFF;
+    border-bottom: 10px solid #c0b5fa47;
+    margin-bottom: 30px;
+  }
+  .header h1 { font-size: 40px; }
+  .date-time {
+    font-size: 20px;
+    margin: 40px 0;
+  }
+  .todo-form .todo-input {
+    background: none;
+  }
+  .todo-input.active {
+    width: 150px;
+  }
+
+  /********** SECTION **********/
+  .todo-list .todo-item {
+    width: 220px;
+    font-size: 12px;
+  }
+  .todo-list .todo-item.checked {
+    width: 200px;
+  }
+  .todo-list .todo-item input {
+    width: 150px;
+  }
+}

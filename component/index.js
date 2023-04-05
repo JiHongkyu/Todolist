@@ -4,6 +4,7 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 let todos = [];
 
+todoInput.addEventListener("input", charLimit);
 todoButton.addEventListener("click", function() {
   todoInput.classList.toggle("active");
 })
@@ -30,7 +31,7 @@ function submitTodo(e) {
   const newTodo = {
     id: Date.now(),
     text: todoInput.value,
-    check: false
+    check: "false"
   };
 
   todos.push(newTodo);
@@ -46,7 +47,12 @@ function insertTodo(newTodo) {
   const editButton = document.createElement("button");
   const deleteButton = document.createElement("button");
 
-  li.classList.add("todo-item", newTodo.check);
+  //reload시 check가 true인지 체크 
+  if(newTodo.check === "true") {
+    li.classList.add("checked");
+  }
+
+  li.classList.add("todo-item");
   li.id = newTodo.id;
   text.innerText = newTodo.text;
   editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
@@ -78,6 +84,7 @@ function editTodo(e) {
   const input = document.createElement("input")
   
   input.placeholder = text.innerText;
+  input.maxLength = "14"; //글자수제한
   form.append(input);
   li.prepend(form);
   text.remove();
@@ -93,4 +100,53 @@ function editTodo(e) {
     li.prepend(span);
     form.remove();
   });
+}
+
+//토글기능
+function checkTodo(e) {
+  const localName = e.target.localName;
+  let find = 0;
+  
+  //li태그를 눌렀을 때
+  if(localName === "li") {
+    const li = e.target;
+
+    for(let i = 0; i < todos.length; i++) {
+      if(todos[i].id === parseInt(li.id)) find = i;
+    }
+
+    if(todos[find].check === "false") {
+      li.classList.add("checked");
+      todos[find].check = "true";
+    } else {
+      li.classList.remove("checked");
+      todos[find].check = "false";
+    }
+    save();
+
+    //글씨를 눌렀을 때
+  } else if(localName === "span") {
+    const li = e.target.parentElement;
+
+    for(let i = 0; i < todos.length; i++) {
+      if(todos[i].id === parseInt(li.id)) find = i;
+    }
+
+    if(todos[find].check === "false") {
+      li.classList.add("checked");
+      todos[find].check = "true";
+    } else {
+      li.classList.remove("checked");
+      todos[find].check = "false";
+    }
+    save();
+  }
+}
+
+//글자수제한 (14자를 넘어가면 경고창 발생)
+function charLimit() {
+  if(todoInput.value.length > 14) {
+    alert("14자 이하로 입력해주세요.");
+    todoInput.value = "";
+  }
 }
