@@ -25,7 +25,10 @@ function save() {
 //데이터 만들기
 function submitTodo(e) {
   e.preventDefault();
-
+  //공백문자 submit 방어코드
+  if(todoInput.value.trim() === "") {
+    return null;
+  }
   //글자수제한
   if(todoInput.value.length > 14) {
     alert("14자 이하로 작성해주세요.");
